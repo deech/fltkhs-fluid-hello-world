@@ -27,7 +27,7 @@ Executable fltkhs-fluid-hello-world
     base == 4.*,
     fltkhs
   default-language: Haskell2010
-  ghc-Options: -Werror -threaded -fcontext-stack=220
+  ghc-Options: -Werror -threaded -fcontext-stack=300
   if impl(ghc >= 7.10) && flag(FastCompile)
      ghc-Options: -fno-specialise -fmax-simplifier-iterations=0 -fsimplifier-phases=0
   Other-Modules: HelloWorld
