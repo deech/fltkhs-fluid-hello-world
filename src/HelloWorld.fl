@@ -12,8 +12,30 @@ Function {make_window(IO(Ref Window))} {open
   } {
     Fl_Button hello_world_button {
       label {Hello World}
-      callback buttonCb selected
+      callback buttonCb
       xywh {30 30 150 40}
+    }
+    Fl_Menu_Bar {} {
+      label menu_bar open
+      xywh {0 0 200 20}
+    } {
+      MenuItem {} {
+        label item
+        xywh {0 0 33 24}
+      }
+      MenuItem {} {
+        label {&item/&item2}
+        xywh {0 0 33 24}
+      }
+      Submenu {} {
+        label submenu open
+        xywh {0 0 65 24}
+      } {
+        MenuItem {} {
+          label in_submenu selected
+          xywh {0 0 33 24}
+        }
+      }
     }
   }
   code {return main_window} {}
