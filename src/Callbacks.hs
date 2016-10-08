@@ -1,3 +1,4 @@
+{-# LANGUAGE OverloadedStrings #-}
 module Callbacks where
 import qualified Graphics.UI.FLTK.LowLevel.FL as FL
 import Graphics.UI.FLTK.LowLevel.Fl_Types
