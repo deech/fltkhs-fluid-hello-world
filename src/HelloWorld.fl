@@ -1,13 +1,13 @@
 # data file for the Fltk User Interface Designer (fluid)
-version 1.0303 
-header_name {.h} 
+version 1.0304
+header_name {.h}
 code_name {.cxx}
 decl {import Callbacks} {private local
-} 
+}
 
 Function {make_window(IO(Ref Window))} {open
 } {
-  Fl_Window main_window {open
+  Fl_Window main_window {open selected
     xywh {815 469 200 125} type Double hide
   } {
     Fl_Button hello_world_button {
@@ -15,28 +15,6 @@ Function {make_window(IO(Ref Window))} {open
       callback buttonCb
       xywh {30 30 150 40}
     }
-    Fl_Menu_Bar {} {
-      label menu_bar open
-      xywh {0 0 200 20}
-    } {
-      MenuItem {} {
-        label item
-        xywh {0 0 33 24}
-      }
-      MenuItem {} {
-        label {&item/&item2}
-        xywh {0 0 33 24}
-      }
-      Submenu {} {
-        label submenu open
-        xywh {0 0 65 24}
-      } {
-        MenuItem {} {
-          label in_submenu selected
-          xywh {0 0 33 24}
-        }
-      }
-    }
   }
   code {return main_window} {}
-} 
+}
