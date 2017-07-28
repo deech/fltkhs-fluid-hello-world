@@ -5,9 +5,11 @@ import qualified Graphics.UI.FLTK.LowLevel.FL as FL
 import Graphics.UI.FLTK.LowLevel.Fl_Types
 import Graphics.UI.FLTK.LowLevel.Fl_Enumerations
 
-main :: IO()
-main = do
-  window <- make_window
-  _ <- showWidget window
-  _ <- FL.run
-  return ()
+ui :: IO()
+ui = make_window >>= showWidget
+
+main :: IO ()
+main = ui >> FL.run >> FL.flush
+
+replMain :: IO ()
+replMain = ui >> FL.replRun
