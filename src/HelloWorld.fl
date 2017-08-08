@@ -5,16 +5,17 @@ code_name {.cxx}
 decl {import Callbacks} {private local
 }
 
-Function {make_window(IO(Ref Window))} {open
+Function {makeWindow(IO(Ref Window))} {open
 } {
-  Fl_Window main_window {open selected
-    xywh {815 469 200 125} type Double hide
+  Fl_Window mainWindow {open
+    xywh {1333 40 200 125} type Double visible
   } {
-    Fl_Button hello_world_button {
+    Fl_Button helloWorldButton {
       label {Hello World}
       callback buttonCb
       xywh {30 30 150 40}
     }
   }
-  code {return main_window} {}
+  code {return mainWindow} {selected
+  }
 }

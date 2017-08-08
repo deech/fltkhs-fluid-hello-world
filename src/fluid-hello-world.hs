@@ -6,7 +6,7 @@ import Graphics.UI.FLTK.LowLevel.Fl_Types
 import Graphics.UI.FLTK.LowLevel.Fl_Enumerations
 
 ui :: IO()
-ui = make_window >>= showWidget
+ui = makeWindow >>= showWidget
 
 main :: IO ()
 main = ui >> FL.run >> FL.flush
