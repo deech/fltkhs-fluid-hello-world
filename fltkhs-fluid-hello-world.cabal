@@ -10,11 +10,17 @@ build-type: Custom
 maintainer: aditya.siram@gmail.com
 homepage: http://github.com/deech/fltkhs-fluid-hello-world
 category: UI,Graphics
-cabal-version: >=1.24
-extra-source-files: HelloWorld.fl
+cabal-version: >=2.0
+extra-source-files: src/HelloWorld.fl
 source-repository head
   type: git
   location: http://github.com/deech/fltkhs-fluid-hello-world
+
+custom-setup
+  setup-depends:
+      Cabal >=2.2.0.0 && <3
+    , base >=4.4
+    , filepath
 
 Flag FastCompile
    Description: Turn off optimizations for faster compilation
@@ -27,8 +33,8 @@ Executable fltkhs-fluid-hello-world
   Hs-Source-Dirs: src/
   Build-Depends:
     base == 4.*,
-    fltkhs >= 0.5.4.3,
-    text >= 0.2 && < 1.3
+    fltkhs >= 0.6.0.0,
+    text >= 1.2.2.0
   default-language: Haskell2010
   ghc-Options: -Werror -threaded
   if impl(ghc >= 7.10) && flag(FastCompile)
