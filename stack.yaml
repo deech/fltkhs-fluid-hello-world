@@ -1,6 +1,6 @@
 flags: {}
 resolver: lts-12.12
 extra-deps:
-- fltkhs-0.7.0.0
+- fltkhs-0.7.0.2
 - text-1.2.3.0
 allow-newer: true
