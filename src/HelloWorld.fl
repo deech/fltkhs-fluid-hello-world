@@ -1,8 +1,11 @@
 # data file for the Fltk User Interface Designer (fluid)
-version 1.0304
+version 1.0400
 header_name {.h}
 code_name {.cxx}
 decl {import Callbacks} {private local
+}
+
+decl {import Graphics.UI.FLTK.LowLevel.FLTKHS} {selected private local
 }
 
 Function {makeWindow(IO(Ref Window))} {open
@@ -16,6 +19,5 @@ Function {makeWindow(IO(Ref Window))} {open
       xywh {30 30 150 40}
     }
   }
-  code {return mainWindow} {selected
-  }
+  code {return mainWindow} {}
 }
