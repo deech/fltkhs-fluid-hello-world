@@ -18,32 +18,19 @@ source-repository head
 
 custom-setup
   setup-depends:
-      Cabal >=2.4.0.0 && <4
+      Cabal >= 3.2.0.0 && < 4
     , base >=4.4
     , filepath
-
-Flag FastCompile
-   Description: Turn off optimizations for faster compilation
-   Manual: True
-   Default: False
+    , fltkhs-fluid-preprocessor >= 0.1.0.0
 
 Executable fltkhs-fluid-hello-world
   Main-Is: fluid-hello-world.hs
-  Other-modules: Callbacks
+  autogen-modules: HelloWorld
+  Other-Modules: HelloWorld, Callbacks
   Hs-Source-Dirs: src/
   Build-Depends:
-    base == 4.*,
+    base >= 4.14 && < 5,
     fltkhs >= 0.8.0.3,
     text >= 1.2.2.0
+  build-tool-depends: fltkhs-fluidtohs:fltkhs-fluidtohs >= 0.1.0.0
   default-language: Haskell2010
-  ghc-Options: -Werror -threaded
-  if impl(ghc >= 7.10) && flag(FastCompile)
-     ghc-Options: -fno-specialise -fmax-simplifier-iterations=0 -fsimplifier-phases=0
-  Other-Modules: HelloWorld
-  if os(windows)
-    ghc-Options: -optl-mwindows
-    ghc-Options: -pgml g++ "-optl-Wl,--allow-multiple-definition" "-optl-Wl,--whole-archive" "-optl-Wl,-Bstatic" "-optl-Wl,-lfltkc" "-optl-Wl,-Bdynamic" "-optl-Wl,--no-whole-archive"
-  if os(darwin)
-   ghc-Options: "-optl-Wl,-lfltkc"
-  if !os(darwin) && !os(windows)
-   ghc-Options: -pgml g++ "-optl-Wl,--allow-multiple-definition" "-optl-Wl,--whole-archive" "-optl-Wl,-Bstatic" "-optl-Wl,-lfltkc" "-optl-Wl,-Bdynamic" "-optl-Wl,--no-whole-archive"

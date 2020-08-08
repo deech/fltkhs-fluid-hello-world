@@ -1,6 +1,9 @@
 flags: {}
-resolver: lts-15.0
+resolver: nightly-2020-07-23
 extra-deps:
-- fltkhs-0.8.0.3
-- text-1.2.3.0
-allow-newer: true
+- git: git@github.com:deech/fltkhs
+  commit: 22162a2c29e0e30b210fa15c5c6408306308480c
+  subdirs:
+    - fltkhs
+    - fltkhs-fluidtohs
+    - fltkhs-fluid-preprocessor

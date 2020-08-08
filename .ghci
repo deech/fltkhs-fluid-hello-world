@@ -1,2 +1,1 @@
-:set -fobject-code
-:set -lfltkc-dyn
+:cmd pure $ if System.Info.os == "darwin" then ":set -fno-ghci-sandbox" else ""
