@@ -2,18 +2,18 @@ packages: .
 
 source-repository-package
   type:git
-  location: git@github.com:deech/fltkhs
-  tag: 22162a2c29e0e30b210fa15c5c6408306308480c
+  location: https://github.com/deech/fltkhs
+  tag: a583d159f05a014735a3a2f322d89937eefcf6ba
   subdir: fltkhs
 
 source-repository-package
   type:git
-  location: git@github.com:deech/fltkhs
-  tag: 22162a2c29e0e30b210fa15c5c6408306308480c
+  location: https://github.com/deech/fltkhs
+  tag: a583d159f05a014735a3a2f322d89937eefcf6ba
   subdir: fltkhs-fluidtohs
 
 source-repository-package
   type:git
-  location: git@github.com:deech/fltkhs
-  tag: 22162a2c29e0e30b210fa15c5c6408306308480c
+  location: https://github.com/deech/fltkhs
+  tag: a583d159f05a014735a3a2f322d89937eefcf6ba
   subdir: fltkhs-fluid-preprocessor
